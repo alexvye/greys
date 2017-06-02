@@ -1,0 +1,4 @@
+2017-06-02 14:21:28 INFO  WebTestContextBootstrapper:185 - Using TestExecutionListeners: [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@4dfa3a9d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6eebc39e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@464bee09]
+2017-06-02 14:21:29 INFO  GenericWebApplicationContext:578 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@9353778: startup date [Fri Jun 02 14:21:29 ADT 2017]; root of context hierarchy
+2017-06-02 14:21:29 INFO  AutowiredAnnotationBeanPostProcessor:153 - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-06-02 14:21:32 INFO  GenericWebApplicationContext:960 - Closing org.springframework.web.context.support.GenericWebApplicationContext@9353778: startup date [Fri Jun 02 14:21:29 ADT 2017]; root of context hierarchy
