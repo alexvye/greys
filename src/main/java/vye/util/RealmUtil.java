@@ -1,9 +1,11 @@
-package vye;
+package vye.util;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import vye.Mob;
 
 public class RealmUtil {
 

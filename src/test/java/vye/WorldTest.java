@@ -20,6 +20,7 @@ import org.apache.logging.log4j.LogManager;
 
 import vye.config.AppConfig;
 import vye.es.ESClient;
+import vye.util.Roller;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
@@ -50,11 +51,23 @@ public class WorldTest implements ApplicationContextAware {
     
     @Test
     public void postTest() throws Exception  {
-    	Mob mob = new Mob("alex","vye");
+    	Mob mob = new Mob("alex","vye","");
         
     	ESClient.post(mob);
     }
 
+    @Test
+    public void testNormal() throws Exception  {
+    	int result = Roller.toss(1000, 1.9599);
+    	System.out.println(result);
+    }
+    
+    @Test
+    public void testCityPop() throws Exception  {
+    	System.out.println(CityFactory.genCitySize('v'));
+    }
+    
+    
    // @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;

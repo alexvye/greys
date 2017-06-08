@@ -7,6 +7,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import vye.util.Roller;
+
 public class MobFactory {
 	
 	public List<Mob> loadMobs(int num) throws IOException {
@@ -22,6 +24,7 @@ public class MobFactory {
 		
 		List<String> lnames = new ArrayList<String>();
 		List<String> fnames = new ArrayList<String>();
+		List<String> mfnames = new ArrayList<String>();
 		
 		String lline = lbfr.readLine();
 		while(lline!=null) {
@@ -34,10 +37,16 @@ public class MobFactory {
 			fnames.add(fline);
 			fline = fbfr.readLine();
 		}
+		
+		String mfline = mbfr.readLine();
+		while(mfline!=null) {
+			mfnames.add(mfline);
+			mfline = mbfr.readLine();
+		}
 
 		for(int i=0; i<num; i++) {
 			Mob mob = new Mob(Roller.randomFromList(fnames, false), 
-					Roller.randomFromList(lnames, false));
+					Roller.randomFromList(lnames, false), "");
 			mobs.add(mob);
 			System.out.println(mob.toString());
 		}

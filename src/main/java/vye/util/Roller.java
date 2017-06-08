@@ -1,10 +1,11 @@
-package vye;
+package vye.util;
 
 import java.util.List;
 import java.util.Random;
 
 public class Roller {
 	private static Random die = new Random();
+	private static double default_sdev = 1.9599;
 	
 	public static final int roll(int dice, int sides) {
 		int sum = 0;
@@ -24,5 +25,16 @@ public class Roller {
 			items.remove(index);
 		}
 		return item;
+	}
+	
+	public static int toss(int mean, double stdev) {
+		
+		double sample = die.nextGaussian()*stdev+mean;
+		return (int)sample;
+	}
+	
+	public static int toss(int mean) {
+
+		return toss(mean,default_sdev);
 	}
 }

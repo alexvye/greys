@@ -1,5 +1,7 @@
 package vye;
 
+import vye.util.Roller;
+
 public class Mob {
 	
 	private int str;
@@ -12,7 +14,13 @@ public class Mob {
 	private String fname;
 	private String lname;
 	
-	public Mob(String fname, String lname) {
+	private String home;
+	private char gender;
+	
+	public static char MALE = 'm';
+	public static char FEMALE = 'f';
+	
+	public Mob(String fname, String lname, String home) {
 		this.fname = fname;
 		this.lname = lname;
 		this.str = Roller.roll(3, 6);
@@ -21,8 +29,37 @@ public class Mob {
 		this.dex = Roller.roll(3, 6);
 		this.con = Roller.roll(3, 6);
 		this.cha = Roller.roll(3, 6);
+		this.home = home;
+		
+		if(Roller.roll(1, 2) == 1) {
+			this.gender = MALE;
+		} else {
+			this.gender = FEMALE;
+		}
 	}
-	
+		
+	public String getHome() {
+		return home;
+	}
+
+	public void setHome(String home) {
+		this.home = home;
+	}
+
+
+
+	public char getGender() {
+		return gender;
+	}
+
+
+
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+
+
+
 	public int getStr() {
 		return str;
 	}
