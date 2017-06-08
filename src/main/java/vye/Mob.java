@@ -20,16 +20,14 @@ public class Mob {
 	public static char MALE = 'm';
 	public static char FEMALE = 'f';
 	
-	public Mob(String fname, String lname, String home) {
-		this.fname = fname;
-		this.lname = lname;
+	public Mob() {
+
 		this.str = Roller.roll(3, 6);
 		this.intl = Roller.roll(3, 6);
 		this.wis = Roller.roll(3, 6);
 		this.dex = Roller.roll(3, 6);
 		this.con = Roller.roll(3, 6);
 		this.cha = Roller.roll(3, 6);
-		this.home = home;
 		
 		if(Roller.roll(1, 2) == 1) {
 			this.gender = MALE;

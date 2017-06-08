@@ -1,7 +1,4 @@
-vye/RealmUtil.class
 vye/Mob.class
 vye/MobFactory.class
-vye/Roller.class
-vye/RealmUtil$1.class
 vye/config/AppConfig.class
 vye/es/ESClient.class

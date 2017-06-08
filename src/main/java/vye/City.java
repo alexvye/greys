@@ -3,6 +3,9 @@ package vye;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class City {
 	
 	private List<Mob> citizens;
@@ -51,5 +54,9 @@ public class City {
 		this.type = type;
 	}
 
-	
+	public String toString() {
+		Gson gson = new GsonBuilder().create();
+        String json = gson.toJson(this);
+		return json;
+	}
 }

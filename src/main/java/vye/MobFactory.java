@@ -45,8 +45,17 @@ public class MobFactory {
 		}
 
 		for(int i=0; i<num; i++) {
-			Mob mob = new Mob(Roller.randomFromList(fnames, false), 
-					Roller.randomFromList(lnames, false), "");
+
+			Mob mob = new Mob();
+			
+			mob.setLname(Roller.randomFromList(lnames, false));
+			
+			if(mob.getGender() == 'f') {
+				mob.setFname(Roller.randomFromList(mfnames, false));				
+			} else {
+				mob.setFname(Roller.randomFromList(mfnames, false));
+			}
+
 			mobs.add(mob);
 			System.out.println(mob.toString());
 		}

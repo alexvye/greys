@@ -16,6 +16,9 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.context.WebApplicationContext;
 import org.apache.logging.log4j.Logger;
+
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 
 import vye.config.AppConfig;
@@ -51,7 +54,7 @@ public class WorldTest implements ApplicationContextAware {
     
     @Test
     public void postTest() throws Exception  {
-    	Mob mob = new Mob("alex","vye","");
+    	Mob mob = new Mob();
         
     	ESClient.post(mob);
     }
@@ -60,6 +63,18 @@ public class WorldTest implements ApplicationContextAware {
     public void testNormal() throws Exception  {
     	int result = Roller.toss(1000, 1.9599);
     	System.out.println(result);
+    }
+    
+    @Test
+    public void testLoadCities() throws Exception  {
+    	
+    	CityFactory factory = new CityFactory();
+    	factory.loadCities("towns.dat");
+    	List<City> cities = factory.getCities();
+    	for(City city:cities) {
+    		System.out.println(city.toString());
+    	}
+    	
     }
     
     @Test
