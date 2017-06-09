@@ -71,10 +71,6 @@ public class WorldTest implements ApplicationContextAware {
     	CityFactory factory = new CityFactory();
     	factory.loadCities("towns.dat");
     	List<City> cities = factory.getCities();
-    	for(City city:cities) {
-    		System.out.println(city.toString());
-    	}
-    	
     }
     
     @Test

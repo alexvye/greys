@@ -56,6 +56,7 @@ public class MobFactory {
 			} else {
 				mob.setFname(Roller.randomFromList(mfnames, false));
 			}
+			System.out.println("Adding " + mob.getFname() + " " + mob.getLname() + " :" +i);
 			ESClient.post(mob);
 			mobs.add(mob);
 		}
