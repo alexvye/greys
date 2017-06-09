@@ -20,20 +20,22 @@ import vye.Mob;
 
 
 public class ESClient {
+	
+	
+	private static TransportClient client = null;
 
 	public static void post(Mob mob) throws Exception {
 		
-		TransportClient client = new PreBuiltTransportClient(Settings.EMPTY)
-		        .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9300));
-
+		if(client == null) {
+			client = new PreBuiltTransportClient(Settings.EMPTY)
+		    .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("localhost"), 9300));
+		}
 		
 		Gson gson = new GsonBuilder().create();
 		String json = gson.toJson(mob);
 		IndexResponse response = client.prepareIndex("mobs", "mob")
 		        .setSource(json)
 		        .get();
-		
-		 client.close();
 	}
 	
 	

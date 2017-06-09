@@ -70,7 +70,7 @@ public class CityFactory {
 		return desc;
 	}
 	
-	public void loadCities(String filename) throws IOException {
+	public void loadCities(String filename) throws Exception {
 		InputStream is = getClass().getResourceAsStream("/" + filename);
 		BufferedReader bfr = new BufferedReader(new InputStreamReader(is));
 		
@@ -81,7 +81,7 @@ public class CityFactory {
 		}
 	}
 	
-	private City parseCity(String line) throws IOException{
+	private City parseCity(String line) throws Exception{
 		
 		StringTokenizer tokenizer = new StringTokenizer(line,",");
 		
@@ -93,7 +93,7 @@ public class CityFactory {
 		int pop = genCitySize(size);
 		
 		City city = new City(name, type, pop);
-		List<Mob> mobs = mobFactory.loadMobs(pop);
+		List<Mob> mobs = mobFactory.loadMobs(pop,name);
 		
 		city.setCitizens(mobs);
 		

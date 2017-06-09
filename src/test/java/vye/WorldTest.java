@@ -49,7 +49,7 @@ public class WorldTest implements ApplicationContextAware {
     @Test
     public void sampleTest() throws Exception  {
     	MobFactory mf = new MobFactory();
-    	mf.loadMobs(100);
+    	mf.loadMobs(100,"sj");
     }
     
     @Test

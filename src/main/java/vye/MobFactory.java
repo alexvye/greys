@@ -7,11 +7,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import vye.es.ESClient;
 import vye.util.Roller;
 
 public class MobFactory {
 	
-	public List<Mob> loadMobs(int num) throws IOException {
+	public List<Mob> loadMobs(int num, String home) throws Exception {
 		
 		List<Mob> mobs = new ArrayList<Mob>();
 		
@@ -47,17 +48,16 @@ public class MobFactory {
 		for(int i=0; i<num; i++) {
 
 			Mob mob = new Mob();
-			
+			mob.setHome(home);
 			mob.setLname(Roller.randomFromList(lnames, false));
 			
 			if(mob.getGender() == 'f') {
-				mob.setFname(Roller.randomFromList(mfnames, false));				
+				mob.setFname(Roller.randomFromList(fnames, false));				
 			} else {
 				mob.setFname(Roller.randomFromList(mfnames, false));
 			}
-
+			ESClient.post(mob);
 			mobs.add(mob);
-			System.out.println(mob.toString());
 		}
 		return mobs;
 	}
