@@ -3,7 +3,7 @@
   <groupId>vye</groupId>
   <artifactId>world2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>world</name>
+  <name>world2</name>
   
       <properties>
     	<jetty.version>8.1.10.v20130312</jetty.version>
